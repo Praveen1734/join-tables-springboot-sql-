@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Order Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+       
+	   body{
+		   background-image: url('bg8.jpg');
+		   background-repeat: no-repeat;
+		   background-attachment: fixed;
+		   background-size: cover !important;
+		   
+		
+
+
+
+	   }
+	   form {text-align: center;}
+   </style>
+    </style>
+</head>
+<body>
+    <h1>Sales Order Details</h1>
+      <div >
+
+    <table>
+        <thead>
+            <tr>
+                <th>S0HeaderId</th>
+                <th>S0Number</th>
+                <th>salesPersonId</th>
+                <th>Name</th>
+                <th>CustomerId</th>
+                <th>FirstName</th>
+              <th>Name</th>
+              <th>TaxName</th>
+            <th>DeliveryName</th>
+            <th>InventoryStatus</th>
+            <th>InvoiceStatus</th>
+            <th>Packagestatus</th>
+            <th>SOStatus</th>
+            <th>ShipmentStatus</th>
+
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="salesOrder : ${salesOrderDetails}"> 
+            <td th:text="${salesOrder[0]}"></td> 
+            <td th:text="${salesOrder[1]}"></td> 
+            <td th:text="${salesOrder[2]}"></td> 
+            <td th:text="${salesOrder[3]}"></td> 
+            <td th:text="${salesOrder[4]}"></td>
+            <td th:text="${salesOrder[5]}"></td>
+            <td th:text="${salesOrder[6]}"></td>
+            <td th:text="${salesOrder[7]}"></td>
+            <td th:text="${salesOrder[8]}"></td>
+            <td th:text="${salesOrder[9]}"></td>
+            <td th:text="${salesOrder[10]}"></td>
+            <td th:text="${salesOrder[11]}"></td>
+            <td th:text="${salesOrder[12]}"></td>
+            <td th:text="${salesOrder[13]}"></td>
+
+
+
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
