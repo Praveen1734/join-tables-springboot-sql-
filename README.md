@@ -1,4 +1,5 @@
-repository 
+1.repository 
+
 package com.connect.sql.store.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -38,6 +39,10 @@ public interface t303_salesorder_headerRepository extends JpaRepository<t303_sal
     List<String> getShipmentStatus();
 	
 }
+
+
+
+
 2.Service
 package com.connect.sql.store.service;
 
@@ -60,10 +65,7 @@ public class SalesOrderService {
     @Autowired
     private t303_salesorder_headerRepository salesOrderRepository;
 
-//    public long countSalesOrders()
-//    {
-//        return salesOrderRepository.countSalesOrders();
-//    }
+
     
     public Page<SalesOrderDetails> getSalesOrderDetails(Long s0HeaderId, String s0Number, int page, int size) 
     {
@@ -139,39 +141,13 @@ public class SalesController {
     @Autowired
     private final SalesOrderService salesOrderService;
 
-	/*
-	 * @GetMapping("/sales") public List<Object[]> getSalesOrderAndSalesPerson() {
-	 * 
-	 * return salesOrderHeaderRepository.findSalesOrderDetails();
-	 * 
-	 * }
-	 * 
-	 * @GetMapping("/index") public String index() { return "index";
-	 */
-	//}
+	
     public SalesController(SalesOrderService salesOrderService) 
     {
         this.salesOrderService = salesOrderService;
     }
 
-//    @RequestMapping("/details")
-//    public String getSalesOrderDetails(Model model) {
-//        List<Object[]> salesOrderDetails = salesOrderService.getSalesOrderDetails();
-//        model.addAttribute("salesOrderDetails", salesOrderDetails);
-//        return "salesOrderDetails"; 
-//    }
-//    @GetMapping("/details1")
-//    public Page<SalesOrderDetails> getSalesOrderDetails(
-//        @RequestParam(required = false) Long s0HeaderId,
-//        @RequestParam(required = false) String s0Number,
-//        @RequestParam(defaultValue = "0") int page,
-//        @RequestParam(defaultValue = "100") int size) {
-//        return salesOrderService.getSalesOrderDetails(s0HeaderId, s0Number, page, size);
-//    }
-//    @GetMapping("count")
-//    public long countSalesOrders() {
-//        return salesOrderService.countSalesOrders();
-//    }
+
     
     
     @GetMapping("/details")
